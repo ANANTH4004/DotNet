@@ -15,7 +15,7 @@ namespace _19_08_2022_Assignment
             a = Console.ReadLine();
             Console.WriteLine("Enter a String:");
             b = Console.ReadLine();
-            if (a == b)
+            if (String.Equals(a,b))
             {
                 Console.WriteLine("{0} and {1} are Equal", a, b);
             }
