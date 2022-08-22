@@ -1,0 +1,79 @@
+1. Write a program in C# Sharp to store elements in an array and print it. 
+(consider array of 10 elements)
+Test Data:
+Input 10 elements in the array:
+element - 0 : 1
+element - 1 : 1
+element - 2 : 2
+.......
+Expected Output :
+Elements in array are: 1 1 2 3 4 5 6 7 8 9
+from Sulakshana Deore (Trainer) to All Participants:
+2. Write a program in C# Sharp to read n number of values in an array and display it in reverse order. 
+Test Data :
+Input the number of elements to store in the array :3
+Input 3 number of elements in the array :
+element - 0 : 2
+element - 1 : 5
+element - 2 : 7
+Expected Output:
+The values store into the array are:
+2 5 7
+The values store into the array in reverse are :
+7 5 2
+from Sulakshana Deore (Trainer) to All Participants:
+3. Write a program in C# Sharp to find the sum of all elements of the array. 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 2
+element - 1 : 5
+element - 2 : 8
+Expected Output :
+Sum of all elements stored in the array is : 15
+from Sulakshana Deore (Trainer) to All Participants:
+4) Create a array list of 5 elements and add, remove, count elements
+from Sulakshana Deore (Trainer) to All Participants:
+5) Create a jagged array to store classroom of the student, with number of students in each classroom
+and print it.
+from Sulakshana Deore (Trainer) to All Participants:
+6)Create a stack of numbers, push, pop,peek,count, print before pop and after pop.
+Find the topmost element on the stack.
+from Sulakshana Deore (Trainer) to All Participants:
+7)Queue of int numbers, enqueue, dequeue and peek elements.
+from Sulakshana Deore (Trainer) to All Participants:
+8)Create a hash table with int as key and value as string and add and print the elements.
+Remove any one entry from the hash table and print again
+from Sulakshana Deore (Trainer) to All Participants:
+9) Create a list of float numbers and print it.
+Also print in ascending and descending order.
+from Sulakshana Deore (Trainer) to All Participants:
+10) Create a Dictionary of int as key and name as string and display the dictionary.
+from Sulakshana Deore (Trainer) to All Participants:
+11) Also create a sorted list for Question 10.
+from Sulakshana Deore (Trainer) to All Participants:
+12) Find the minimum and maximum element in an array
+
+
+14) Given a value N, find the number of ways to make change for N cents,
+ if we have infinite supply of each of S = { S1, S2, .. , SM } valued coins.
+Input:
+n = 4 , m = 3
+S[] = {1,2,3}
+Output: 4
+Explanation: Four Possible ways are:
+{1,1,1,1},{1,1,2},{2,2},{1,3}.
+from Sulakshana Deore (Trainer) to All Participants:
+Given an array arr[] of size n, find the first repeating element.
+ The element should occurs more than once and the index of its first occurrence 
+should be the smallest.
+
+Input:
+n = 7
+arr[] = {1, 5, 3, 4, 3, 5, 6}
+Output: 2
+Explanation: 
+5 is appearing twice and 
+its first appearence is at index 2 
+which is less than 3 whose first 
+occuring index is 3.
