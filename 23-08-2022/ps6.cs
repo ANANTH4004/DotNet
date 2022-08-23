@@ -15,12 +15,12 @@ namespace _23_08_2022
     }
     internal class ps6
     {
-       // static void Main(string[] args)
+        //static void main(string[] args)
         //{
-        //    Console.WriteLine("Enter DeptName: ");
-        //    string deptName = Console.ReadLine();
-        //    DeptNames a = deptName;
-        //    Console.WriteLine( (int)DeptNames.deptName);
-       // }
+        //    console.writeline("enter deptname: ");
+        //    string deptname = console.readline();
+        //    deptnames a = deptname;
+        //    console.writeline((int)deptnames.deptname);
+        //}
     }
 }
