@@ -77,3 +77,20 @@ Explanation:
 its first appearence is at index 2 
 which is less than 3 whose first 
 occuring index is 3.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Write a method to handle Divide By Zero exception and call the stack trace to get the line number by calling method in the main
+9) Write a program to accept employee data using the above structure.
+In the properties, write a validation to check empno and deptno not equal to zero.
+Also write validation for empname should not be null or empty
