@@ -94,3 +94,20 @@ Write a method to handle Divide By Zero exception and call the stack trace to ge
 9) Write a program to accept employee data using the above structure.
 In the properties, write a validation to check empno and deptno not equal to zero.
 Also write validation for empname should not be null or empty
+
+
+
+
+
+
+
+===============24-08-2022=========================================================
+2)Demonstrate the example of Copy method of String class in C#
+3) Demonstrate the example of IndexOf() method of string class in C#
+4) String.Split() method of String class in C# with an Example
+consider the following string: 
+Welcome to the world of C# Programming
+Split on (#) character
+5) convert string into uppercase in C#
+6) create a blank file name it as firstFile.txt
+7) display the Day properties (year, month, day, hour, minute, second, millisecond etc.) of todays date
