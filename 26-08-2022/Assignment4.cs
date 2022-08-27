@@ -13,9 +13,13 @@ namespace LinkedListAssignment
             LinkedList<string> slist = new LinkedList<string>();
             slist.AddFirst("Anand");
             slist.AddAfter(slist.First,"varun");
-            slist.AddFirst("Nithya");
-            slist.AddFirst("");
-            slist.AddFirst("Anand");
+            slist.AddAfter(slist.First.Next,"Nithya");
+            slist.AddAfter(slist.Last.Previous,"sam");
+            slist.AddLast("Krish");
+            foreach (var item in slist)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
