@@ -44,11 +44,11 @@ namespace LinkedListAssignment
                 case 2:
                     Console.WriteLine("Enter Product Id:");
                     int id1 = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Enter Product Name:");
-                    string name1 = Console.ReadLine();
+                    //Console.WriteLine("Enter Product Name:");
+                    //string name1 = Console.ReadLine();
                     Products p = new Products();
                     p.getPId = id1;
-                    p.getName = name1;
+                    //p.getName = name1;
                     remove(ref plist,p);
                     break;
                 default:
@@ -73,8 +73,10 @@ namespace LinkedListAssignment
             //p2.getName = name;
             //Console.WriteLine(plist.Contains(new Products() { getPId = id, getName = name }));
             //plist.Remove(new Products() { getPId = id, getName = name });
-            
-            plist.Remove(p1);
+            var item = plist.Find(l => l.getPId == p1.getPId);
+            plist.Remove(item);
+
+           
             Console.WriteLine(plist.Count);
         }
     }
