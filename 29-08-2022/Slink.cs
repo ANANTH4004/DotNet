@@ -6,47 +6,81 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
+    
     public class Slink
     {
-        internal Node head;
-        public void InsertFront(Slink link ,  int data)
+        Node head;
+
+
+       internal void InsertFront(Slink link, int data)
         {
             Node newnode = new Node(data);
             newnode.next = link.head;
             link.head = newnode;
 
         }
-        public Node GetLast(Slink link)
+
+       internal void InsertLast(Slink link, int data)
+        {
+            Node node = new Node(data);
+            if (link.head == null)
+            {
+                link.head = node;
+                return;
+            }
+            Node newnode = GetLastNode(link);
+            newnode.next = node;
+
+        }
+
+        private Node GetLastNode(Slink link)
         {
             Node last = link.head;
-            while (last.next != null)
+            while (last != null)
             {
                 last = last.next;
             }
             return last;
         }
-        public void InsertLast(Slink link, int data)
-        {
-            Node newnode = new Node(data);
-            if (link.head != null)
-            {
-                link.head = newnode;
-                return;
-            }
-            Node last = GetLast(link);
 
-        }
-        public void InsertAfter(Node prevNode, int data)
+       internal void InsertAfter(Node prevNode, int data)
         {
             if (prevNode == null)
             {
-                Console.WriteLine("This node can't be null");
+                Console.WriteLine("This cannot be null");
                 return;
+
             }
             Node newnode = new Node(data);
             newnode.next = prevNode.next;
             prevNode.next = newnode;
+        }
 
+        internal void DeleteByFindingData(Slink link, int data)
+        {
+
+            Node temp = link.head;
+            Node prev = null;
+            if (temp != null && temp.data == data)
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+            {
+                return;
+            }
+            prev.next = temp.next;
+        }
+        public void Print(Slink link)
+        {
+           Node temp = link.head;
+            while (temp != null)
+            {
+                Console.WriteLine(temp.data);
+                temp = temp.next;
+            }
+            Console.WriteLine("================================");
         }
     }
 

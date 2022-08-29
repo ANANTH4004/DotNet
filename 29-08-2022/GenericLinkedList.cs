@@ -15,50 +15,73 @@ namespace DataStructure
             this.data = data;
         }
     }
-   
-    public class GenericLinkedList<T>
+
+    public class Slink<T>
     {
         internal Node<T> head;
-        public void InsertFront(GenericLinkedList<T> link, T data)
+
+
+        internal void InsertFront(Slink<T> link, T data)
         {
             Node<T> newnode = new Node<T>(data);
             newnode.next = link.head;
             link.head = newnode;
 
         }
-        public Node<T> GetLast(GenericLinkedList<T> link)
+
+        internal void InsertLast(Slink<T> link, T data)
+        {
+            Node<T> newnode = new Node<T>(data);
+            if (link.head == null)
+            {
+                link.head = newnode;
+                return;
+            }
+            Node<T> last = GetLastNode(link);
+            last.next = newnode;
+
+        }
+
+        private Node<T> GetLastNode(Slink<T> link)
         {
             Node<T> last = link.head;
-            while (last.next != null)
+            while (last != null)
             {
                 last = last.next;
             }
             return last;
         }
-        public void InsertLast(GenericLinkedList<T> link, T data)
-        {
-            Node<T> newnode = new Node<T>(data);
-            if (link.head != null)
-            {
-                link.head = newnode;
-                return;
-            }
-            Node<T> last = GetLast(link);
 
-        }
-        public void InsertAfter(Node<T> prevNode, T data)
+        internal void InsertAfter(Node<T> prevNode, T data)
         {
             if (prevNode == null)
             {
-                Console.WriteLine("This node can't be null");
+                Console.WriteLine("This cannot be null");
                 return;
+
             }
             Node<T> newnode = new Node<T>(data);
             newnode.next = prevNode.next;
             prevNode.next = newnode;
-
         }
-        public void Print(GenericLinkedList<T> link)
+
+        internal void DeleteByFindingData(Slink<T> link, T key)
+        {
+
+            Node<T> temp = link.head;
+            Node<T> prev = null;
+            if (temp != null && temp.data.Equals( key))
+            {
+                prev = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+            {
+                return;
+            }
+            prev.next = temp.next;
+        }
+        public void Print(Slink<T> link)
         {
             Node<T> temp = link.head;
             while (temp != null)
@@ -66,6 +89,7 @@ namespace DataStructure
                 Console.WriteLine(temp.data);
                 temp = temp.next;
             }
+            Console.WriteLine("================================");
         }
     }
     /// <summary>

@@ -94,18 +94,52 @@ namespace DataStructure
             //Console.WriteLine(os.Peek()); 
             #endregion
 
-            Queue q = new Queue(10);
-            q.Enqueue(100);
-            q.Enqueue(200);
-            q.Enqueue(300);
-            q.Enqueue(400);
-            q.Enqueue(500);
-            q.Print();
-            q.Dequeue();
-            q.Dequeue();
-            q.Print();
+            #region Queue using Array Demo
+            //Queue q = new Queue(10);
+            //q.Enqueue(100);
+            //q.Enqueue(200);
+            //q.Enqueue(300);
+            //q.Enqueue(400);
+            //q.Enqueue(500);
+            //q.Print();
+            //q.Dequeue();
+            //q.Dequeue();
+            //q.Print();
+            #endregion
 
+            #region Singly linked list demo
+            //Slink s = new Slink();
+            //s.InsertFront(s, 100);
+            //s.InsertFront(s, 200);
+            //s.InsertFront(s, 300);
+            //s.InsertFront(s, 400);
+            //s.InsertFront(s, 500);
+            //s.Print(s); 
+            #endregion
 
+            #region generic demo singly
+            //    Slink<string> sli = new Slink<string>();
+            //    try
+            //    {
+            //        // sli.InsertFront(sli, "anand");
+            //        sli.InsertLast(sli, "varun");
+            //        sli.InsertLast(sli, "Nithya");
+            //        //sli.InsertLast(sli, "sam");
+            //        //sli.InsertLast(sli, "sk");
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //        Console.WriteLine(ex.Message);
+            //        Console.WriteLine(ex.StackTrace);
+            //    }
+
+            //    // sl.InsertAfter(sl.head.next, "middle");
+            //    sli.Print(sli);
+            //} 
         }
+        #endregion
+
+
     }
 }
