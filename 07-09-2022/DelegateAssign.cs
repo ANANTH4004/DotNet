@@ -12,8 +12,13 @@ namespace _07_09_2022Assignment
 
     public delegate int Math(int n1, int n2);
     public delegate string Concat(string s1, string s2);
+    public delegate string ToUpperCase(string s);
     internal class DelegateAssign
     {
+        public static string ToUpper(string s)
+        {
+            return char.ToUpper(s[0]) + s.Substring(1);
+        }
         public int Add(int a, int b)
         {
             Console.WriteLine($"Addition : {a+b}");
@@ -38,6 +43,7 @@ namespace _07_09_2022Assignment
             Console.WriteLine( $"The length of {s} is {s.Length}" );
             return s.Length;
         } 
+        
         static void Main(string[] args)
         {
             FindLength f = new FindLength(Length);

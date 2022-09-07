@@ -27,6 +27,8 @@ namespace _07_09_2022Assignment
             Console.WriteLine("years of service : " + emp1);
             int emp2 = y(e2);
             Console.WriteLine("years of service : " + emp2);
+            ToUpperCase u = new ToUpperCase(DelegateAssign.ToUpper);
+            Console.WriteLine("Title case : " + u("anand balamurugan"));
 
         }
     }
