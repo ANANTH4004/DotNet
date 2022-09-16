@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<User xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <moviesBorrowed>2</moviesBorrowed>
+  <BorrowedMovies>
+    <Movie>
+      <MovieName>KRK</MovieName>
+      <Availability>9</Availability>
+      <Language>Tamil</Language>
+      <genres>Romance</genres>
+      <Cost>60</Cost>
+    </Movie>
+    <Movie>
+      <MovieName>VTK</MovieName>
+      <Availability>9</Availability>
+      <Language>Tamil</Language>
+      <genres>Acton</genres>
+      <Cost>120</Cost>
+    </Movie>
+  </BorrowedMovies>
+  <UserId>23</UserId>
+  <userLevel>3</userLevel>
+  <UserName>Varun</UserName>
+  <Password>23password</Password>
+</User>

@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Movies;
 using static Movies.User;
 
+
+
 namespace Movies
 {
+
+    [Serializable()]
     public class User
     {
-        
+        public static event Func<string,bool> Request;
         public int moviesBorrowed = 0;
        public enum UserLevel
         {
@@ -18,14 +23,20 @@ namespace Movies
             Gold = 3,
             Platinum = 5
         }
-        public List<Movie> BorrowedMovies;
+        public List<Movie> BorrowedMovies = new List<Movie>();
         public User()
-        {
-            this.userLevel =(int) UserLevel.Silver;
-            BorrowedMovies = new List<Movie>();
-            
+        {   
         }
-        public User(string UserName ,string Password, string UserLevel1)
+        private long _UserId;
+
+
+        public long UserId
+        {
+            get { return _UserId; }
+            set { _UserId = value; }
+        }
+
+        public User(string UserName,long UserId ,string Password, string UserLevel1)
         {
             if(UserLevel1 == "Silver")
             {
@@ -41,6 +52,8 @@ namespace Movies
             }
             this.UserName = UserName;
             this.Password = Password;
+            this.UserId = UserId;
+            Write(this.UserName +"-"+ this.UserId + "-"+ this.Password + "-"  + this.userLevel);
         }
         private int _UserLevel;
 
@@ -63,7 +76,7 @@ namespace Movies
             get { return _Password; }
             set { _Password = value; }
         }
-        public void AddUser(string UserName, string Password, string UserLevel1)
+        public void AddUser(string UserName,long UserId, string Password, string UserLevel1)
         {
             if (UserLevel1 == "Silver")
             {
@@ -78,27 +91,42 @@ namespace Movies
                 this.userLevel = (int)UserLevel.Platinum;
             }
             this.UserName = UserName;
+            this.UserId = UserId;
             this.Password = Password;
+            Write(this.UserName + "-" + this.UserId + "-" + this.Password + "-" + this.userLevel);
+
         }
         public void BorrowMovie(Movie m)
         {
-            if (m.Availability > 0)
+            
+            
+            bool  ans = Request(m.MovieName);
+            if (ans)
             {
-                if(this.moviesBorrowed <= this.userLevel)
+
+                if (m.Availability > 0)
                 {
-                    m.Availability--;
-                    this.moviesBorrowed++;
-                    BorrowedMovies.Add(m);
+                    if (this.moviesBorrowed <= this.userLevel)
+                    {
+                        m.Availability--;
+                        this.moviesBorrowed++;
+                        BorrowedMovies.Add(m);
+                    }
+                    else
+                    {
+                        Console.WriteLine("User Can't Borrow Anymore Movies upgrade your level");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("User Can't Borrow Anymore Movies");
+                    Console.WriteLine($"{m.MovieName} Movie isn't Availabale");
                 }
             }
             else
             {
-                Console.WriteLine("This Movies isn't Availabale");
+                Console.WriteLine("Admin Rejected....");
             }
+            //Console.WriteLine("--------------------------------------------------------------------");
         }
         public void RetrunMovie(Movie m,int days)
         {
@@ -113,8 +141,9 @@ namespace Movies
             }
             else
             {
-                Console.WriteLine("You didn't Borrow this movie..");
+                Console.WriteLine($"You didn't Borrow {m.MovieName} movie..");
             }
+            Console.WriteLine("--------------------------------------------------------------------");
         }
         public void SearchByLanguage(string language)
         {
@@ -125,6 +154,7 @@ namespace Movies
                     Console.WriteLine($"Movie Name : {item.MovieName}  Language : {item.Language} Genere : {item.genres}");
                 }
             }
+            Console.WriteLine("--------------------------------------------------------------------");
         }
         public void SearchByGenre(string genre)
         {
@@ -135,12 +165,35 @@ namespace Movies
                     Console.WriteLine($"Movie Name : {item.MovieName}  Language : {item.Language} Genere : {item.genres}");
                 }
             }
+            Console.WriteLine("--------------------------------------------------------------------");
         }
         public void ShowMyList()
         {
             foreach (var item in this.BorrowedMovies)
             {
                 Console.WriteLine($"Movie Name : {item.MovieName}  Language : {item.Language} Genere : {item.genres}");
+            }
+            Console.WriteLine("--------------------------------------------------------------------");
+        }
+        public virtual void  Write(string data)
+        {
+            FileStream fs = new FileStream("D:\\c#\\MovieApps\\AdminModule\\bin\\Debug\\User.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter sw = null;
+            try
+            {
+                sw = new StreamWriter(fs);
+
+                sw.WriteLine(data);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Error Message from Write Method : " + ex.Message);
+            }
+            finally
+            {
+                sw.Close();
+                fs.Close();
+                fs.Dispose();
             }
         }
 

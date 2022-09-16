@@ -1,0 +1,9 @@
+D:\c#\MovieApps\AdminModule\bin\Debug\AdminModule.dll
+D:\c#\MovieApps\AdminModule\bin\Debug\AdminModule.pdb
+D:\c#\MovieApps\AdminModule\bin\Debug\Movies.dll
+D:\c#\MovieApps\AdminModule\bin\Debug\Movies.pdb
+D:\c#\MovieApps\AdminModule\obj\Debug\AdminModule.csproj.AssemblyReference.cache
+D:\c#\MovieApps\AdminModule\obj\Debug\AdminModule.csproj.CoreCompileInputs.cache
+D:\c#\MovieApps\AdminModule\obj\Debug\AdminModule.csproj.CopyComplete
+D:\c#\MovieApps\AdminModule\obj\Debug\AdminModule.dll
+D:\c#\MovieApps\AdminModule\obj\Debug\AdminModule.pdb

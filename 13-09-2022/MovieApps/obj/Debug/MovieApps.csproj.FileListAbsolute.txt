@@ -1,0 +1,13 @@
+D:\c#\MovieApps\MovieApps\bin\Debug\MovieApps.exe.config
+D:\c#\MovieApps\MovieApps\bin\Debug\MovieApps.exe
+D:\c#\MovieApps\MovieApps\bin\Debug\MovieApps.pdb
+D:\c#\MovieApps\MovieApps\bin\Debug\Movies.dll
+D:\c#\MovieApps\MovieApps\bin\Debug\Movies.pdb
+D:\c#\MovieApps\MovieApps\obj\Debug\MovieApps.csproj.AssemblyReference.cache
+D:\c#\MovieApps\MovieApps\obj\Debug\MovieApps.csproj.SuggestedBindingRedirects.cache
+D:\c#\MovieApps\MovieApps\obj\Debug\MovieApps.csproj.CoreCompileInputs.cache
+D:\c#\MovieApps\MovieApps\obj\Debug\MovieApps.csproj.CopyComplete
+D:\c#\MovieApps\MovieApps\obj\Debug\MovieApps.exe
+D:\c#\MovieApps\MovieApps\obj\Debug\MovieApps.pdb
+D:\c#\MovieApps\MovieApps\bin\Debug\AdminModule.dll
+D:\c#\MovieApps\MovieApps\bin\Debug\AdminModule.pdb
