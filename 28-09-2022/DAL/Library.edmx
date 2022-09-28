@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ShoppingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Book_No" />
+          </Key>
+          <Property Name="Book_No" Type="int" Nullable="false" />
+          <Property Name="Book_Name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Author" Type="varchar" MaxLength="30" />
+          <Property Name="Cost" Type="decimal" Precision="7" Scale="2" />
+          <Property Name="Category" Type="char" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustiD" />
+          </Key>
+          <Property Name="CustiD" Type="int" Nullable="false" />
+          <Property Name="CustName" Type="varchar" MaxLength="20" />
+          <Property Name="City" Type="varchar" MaxLength="20" />
+          <Property Name="CustState" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Lib_Issue">
+          <Key>
+            <PropertyRef Name="Lib_Issue_Id" />
+          </Key>
+          <Property Name="Lib_Issue_Id" Type="int" Nullable="false" />
+          <Property Name="Book_NO" Type="int" Nullable="false" />
+          <Property Name="Member_Id" Type="int" />
+          <Property Name="Issue_Date" Type="date" />
+          <Property Name="Return_date" Type="date" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Member_Id" />
+          </Key>
+          <Property Name="Member_Id" Type="int" Nullable="false" />
+          <Property Name="Member_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Acc_Open_Date" Type="date" />
+          <Property Name="Max_Books_Allowed" Type="int" />
+          <Property Name="Penalty_Amount" Type="decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <Function Name="GetAllBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_BookCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_BookCount1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_BookCount2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_BookCountFinal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_UpdateBook" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="p_BookNo" Type="int" Mode="In" />
+          <Parameter Name="p_BookName" Type="varchar" Mode="In" />
+          <Parameter Name="p_Author" Type="varchar" Mode="In" />
+          <Parameter Name="p_Cost" Type="decimal" Mode="In" />
+          <Parameter Name="p_Category" Type="char" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateMember" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="memberID" Type="int" Mode="In" />
+          <Parameter Name="memberName" Type="varchar" Mode="In" />
+          <Parameter Name="openDate" Type="date" Mode="In" />
+          <Parameter Name="penalty" Type="decimal" Mode="In" />
+        </Function>
+        <EntityContainer Name="ShoppingModelStoreContainer">
+          <EntitySet Name="Book" EntityType="Self.Book" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Lib_Issue" EntityType="Self.Lib_Issue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShoppingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Book_No" />
+          </Key>
+          <Property Name="Book_No" Type="Int32" Nullable="false" />
+          <Property Name="Book_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Author" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Cost" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="Category" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="CustiD" />
+          </Key>
+          <Property Name="CustiD" Type="Int32" Nullable="false" />
+          <Property Name="CustName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CustState" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Lib_Issue">
+          <Key>
+            <PropertyRef Name="Lib_Issue_Id" />
+          </Key>
+          <Property Name="Lib_Issue_Id" Type="Int32" Nullable="false" />
+          <Property Name="Book_NO" Type="Int32" Nullable="false" />
+          <Property Name="Member_Id" Type="Int32" />
+          <Property Name="Issue_Date" Type="DateTime" Precision="0" />
+          <Property Name="Return_date" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Member_Id" />
+          </Key>
+          <Property Name="Member_Id" Type="Int32" Nullable="false" />
+          <Property Name="Member_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Acc_Open_Date" Type="DateTime" Precision="0" />
+          <Property Name="Max_Books_Allowed" Type="Int32" />
+          <Property Name="Penalty_Amount" Type="Decimal" Precision="7" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="ShoppingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Books" EntityType="Self.Book" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Lib_Issue" EntityType="Self.Lib_Issue" />
+          <EntitySet Name="Members" EntityType="Self.Member" />
+          <FunctionImport Name="sp_UpdateMember">
+            <Parameter Name="memberID" Mode="In" Type="Int32" />
+            <Parameter Name="memberName" Mode="In" Type="String" />
+            <Parameter Name="openDate" Mode="In" Type="DateTime" />
+            <Parameter Name="penalty" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateBook">
+            <Parameter Name="p_BookNo" Mode="In" Type="Int32" />
+            <Parameter Name="p_BookName" Mode="In" Type="String" />
+            <Parameter Name="p_Author" Mode="In" Type="String" />
+            <Parameter Name="p_Cost" Mode="In" Type="Decimal" />
+            <Parameter Name="p_Category" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_BookCount" />
+          <FunctionImport Name="sp_BookCount1" />
+          <FunctionImport Name="sp_BookCount2" />
+          <FunctionImport Name="sp_BookCountFinal" />
+          <FunctionImport Name="GetAllBook" ReturnType="Collection(ShoppingModel.GetAllBook_Result)" />
+        </EntityContainer>
+        <ComplexType Name="GetAllBook_Result">
+          <Property Type="Int32" Name="Book_No" Nullable="false" />
+          <Property Type="String" Name="Book_Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Author" Nullable="true" MaxLength="30" />
+          <Property Type="Decimal" Name="Cost" Nullable="true" Precision="7" Scale="2" />
+          <Property Type="String" Name="Category" Nullable="true" MaxLength="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ShoppingModelStoreContainer" CdmEntityContainer="ShoppingEntities">
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="ShoppingModel.Book">
+              <MappingFragment StoreEntitySet="Book">
+                <ScalarProperty Name="Book_No" ColumnName="Book_No" />
+                <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="ShoppingModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustiD" ColumnName="CustiD" />
+                <ScalarProperty Name="CustName" ColumnName="CustName" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="CustState" ColumnName="CustState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Lib_Issue">
+            <EntityTypeMapping TypeName="ShoppingModel.Lib_Issue">
+              <MappingFragment StoreEntitySet="Lib_Issue">
+                <ScalarProperty Name="Lib_Issue_Id" ColumnName="Lib_Issue_Id" />
+                <ScalarProperty Name="Book_NO" ColumnName="Book_NO" />
+                <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
+                <ScalarProperty Name="Issue_Date" ColumnName="Issue_Date" />
+                <ScalarProperty Name="Return_date" ColumnName="Return_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="ShoppingModel.Member">
+              <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
+                <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+                <ScalarProperty Name="Acc_Open_Date" ColumnName="Acc_Open_Date" />
+                <ScalarProperty Name="Max_Books_Allowed" ColumnName="Max_Books_Allowed" />
+                <ScalarProperty Name="Penalty_Amount" ColumnName="Penalty_Amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_UpdateMember" FunctionName="ShoppingModel.Store.sp_UpdateMember" />
+          <FunctionImportMapping FunctionImportName="sp_UpdateBook" FunctionName="ShoppingModel.Store.sp_UpdateBook" />
+          <FunctionImportMapping FunctionImportName="sp_BookCount" FunctionName="ShoppingModel.Store.sp_BookCount" />
+          <FunctionImportMapping FunctionImportName="sp_BookCount1" FunctionName="ShoppingModel.Store.sp_BookCount1" />
+          <FunctionImportMapping FunctionImportName="sp_BookCount2" FunctionName="ShoppingModel.Store.sp_BookCount2" />
+          <FunctionImportMapping FunctionImportName="sp_BookCountFinal" FunctionName="ShoppingModel.Store.sp_BookCountFinal" />
+          <FunctionImportMapping FunctionImportName="GetAllBook" FunctionName="ShoppingModel.Store.GetAllBook">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ShoppingModel.GetAllBook_Result">
+                <ScalarProperty Name="Book_No" ColumnName="Book_No" />
+                <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

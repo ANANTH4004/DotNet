@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ShoppingModelStoreContainer" CdmEntityContainer="ShoppingEntities">
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="ShoppingModel.Book">
+        <MappingFragment StoreEntitySet="Book">
+          <ScalarProperty Name="Book_No" ColumnName="Book_No" />
+          <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="ShoppingModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustiD" ColumnName="CustiD" />
+          <ScalarProperty Name="CustName" ColumnName="CustName" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="CustState" ColumnName="CustState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lib_Issue">
+      <EntityTypeMapping TypeName="ShoppingModel.Lib_Issue">
+        <MappingFragment StoreEntitySet="Lib_Issue">
+          <ScalarProperty Name="Lib_Issue_Id" ColumnName="Lib_Issue_Id" />
+          <ScalarProperty Name="Book_NO" ColumnName="Book_NO" />
+          <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
+          <ScalarProperty Name="Issue_Date" ColumnName="Issue_Date" />
+          <ScalarProperty Name="Return_date" ColumnName="Return_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="ShoppingModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="Member_Id" ColumnName="Member_Id" />
+          <ScalarProperty Name="Member_Name" ColumnName="Member_Name" />
+          <ScalarProperty Name="Acc_Open_Date" ColumnName="Acc_Open_Date" />
+          <ScalarProperty Name="Max_Books_Allowed" ColumnName="Max_Books_Allowed" />
+          <ScalarProperty Name="Penalty_Amount" ColumnName="Penalty_Amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_UpdateMember" FunctionName="ShoppingModel.Store.sp_UpdateMember" />
+    <FunctionImportMapping FunctionImportName="sp_UpdateBook" FunctionName="ShoppingModel.Store.sp_UpdateBook" />
+    <FunctionImportMapping FunctionImportName="sp_BookCount" FunctionName="ShoppingModel.Store.sp_BookCount" />
+    <FunctionImportMapping FunctionImportName="sp_BookCount1" FunctionName="ShoppingModel.Store.sp_BookCount1" />
+    <FunctionImportMapping FunctionImportName="sp_BookCount2" FunctionName="ShoppingModel.Store.sp_BookCount2" />
+    <FunctionImportMapping FunctionImportName="sp_BookCountFinal" FunctionName="ShoppingModel.Store.sp_BookCountFinal" />
+    <FunctionImportMapping FunctionImportName="GetAllBook" FunctionName="ShoppingModel.Store.GetAllBook">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ShoppingModel.GetAllBook_Result">
+          <ScalarProperty Name="Book_No" ColumnName="Book_No" />
+          <ScalarProperty Name="Book_Name" ColumnName="Book_Name" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

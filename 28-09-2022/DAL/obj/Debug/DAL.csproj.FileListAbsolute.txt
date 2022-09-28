@@ -1,0 +1,12 @@
+D:\c#\EFAssignment\DAL\bin\Debug\DAL.dll
+D:\c#\EFAssignment\DAL\bin\Debug\DAL.pdb
+D:\c#\EFAssignment\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\c#\EFAssignment\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\c#\EFAssignment\DAL\obj\Debug\DAL.dll
+D:\c#\EFAssignment\DAL\obj\Debug\DAL.pdb
+D:\c#\EFAssignment\DAL\bin\Debug\DAL.dll.config
+D:\c#\EFAssignment\DAL\bin\Debug\EntityFramework.dll
+D:\c#\EFAssignment\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\c#\EFAssignment\DAL\bin\Debug\EntityFramework.xml
+D:\c#\EFAssignment\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\c#\EFAssignment\DAL\obj\Debug\DAL.csproj.CopyComplete
